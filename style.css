@@ -1,0 +1,119 @@
+body {
+    background-color: #050210;
+    margin: 0px;
+    
+}
+
+#glow {
+    width: 330px;
+    height: 330px;
+    padding: 10px;
+    background: repeating-linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    position: absolute;
+    animation-name: turn;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    top: 168px;
+    left: 508px;
+    border-radius: 50%;
+}
+
+#inner {
+    width: 300px;
+    height: 300px;
+    background-color: #050210;
+    margin: 15px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.box {
+    display: inline-block;
+}
+
+#shadow {
+    background: repeating-linear-gradient(#fb5dac, #55fb9f, #b97aff);
+    content: '';
+    width: 400px;
+    height: 400px;
+    margin: 0px;
+    position: absolute;
+    border-radius: 50%;
+    display: inline-block;
+    top: 143px;
+    left: 483px;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    filter: blur(50px);
+}
+
+div::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+    top: 50%;
+    border: 1px solid #0d052b;
+    border-radius: 50%;
+    background-color: #050210;
+    animation: inner 1.5s ease-out infinite;
+}
+
+@keyframes turn {
+0% {
+transform: rotate(0deg);
+background-color: #fb5dad;
+
+}
+
+33.33% {
+transform: rotate(120deg);
+background-color: #55fb9f;
+}
+
+100% {
+transform: rotate(360deg);
+background-color: #b97aff;
+
+}
+}
+
+@keyframes spin {
+0% {
+transform: rotate(0deg);
+background-color: #fb5dad;
+
+}
+
+33.33% {
+transform: rotate(120deg);
+background-color: #55fb9f;
+}
+
+100% {
+transform: rotate(360deg);
+background-color: #b97aff;
+
+}
+}
+
+@keyframes inner {
+
+0% {
+    opacity: 2;
+    transform: scale(5)
+
+}
+
+100% {
+    opacity: 0.5;
+    transform: scale(150)
+
+}
+}
